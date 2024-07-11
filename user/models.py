@@ -16,6 +16,7 @@ class CustomUserManager(BaseUserManager):
             raise ValueError('Users must have an email address')
 
         user = self.model(
+            # username=
             email=self.normalize_email(email),
             name=name,**otherfields
         )
@@ -42,12 +43,13 @@ class CustomUserManager(BaseUserManager):
 
 class User(AbstractBaseUser,PermissionsMixin):
 
-    email = models.EmailField(unique=True)
-    name = models.CharField(max_length=100)
+    username = models.CharField(max_length=200,unique=True)
+    email = models.EmailField(blank=True,null=True,unique=True)
+    name = models.CharField(max_length=100,null=True,blank=True)
     created_on = models.DateField(auto_now_add=True)
     is_staff = models.BooleanField(default=False)
-    is_active = models.BooleanField(default=False)
+    is_active = models.BooleanField(default=True)
     objects = CustomUserManager()
     
     REQUIRED_FIELDS = ['name']
-    USERNAME_FIELD = 'email'
+    USERNAME_FIELD = 'username'

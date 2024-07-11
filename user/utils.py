@@ -13,7 +13,6 @@ def createAuth0User(email,password,name):
         'connection': 'Username-Password-Authentication'
     }
     response = requests.post(url, json=payload)
-    # print("response",response.json())
     if response.status_code == 200:
         return response
     raise ValidationError(response.json())
@@ -26,8 +25,8 @@ def obtainTokenAuth0(email,password):
         'client_secret': settings.AUTH0_CLIENT_SECRET,
         'username': email,
         'password': password,
-        'scope': 'openid',
-        'connection': 'Username-Password-Authentication'
+        "audience":settings.API_IDENTIFIER,
+        "scope":"openid"
     }
     response = requests.post(url, json=payload)
     return response
