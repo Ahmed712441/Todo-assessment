@@ -1,0 +1,935 @@
+{
+	"info": {
+		"_postman_id": "3c7327b5-b7a4-4802-9bc7-8e1bd25355d0",
+		"name": "assesment todo",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "23539289",
+		"_collection_link": "https://cloudy-satellite-622769.postman.co/workspace/sea-life-connect~1bc52687-8490-4282-95b4-46bf432b2099/collection/23539289-3c7327b5-b7a4-4802-9bc7-8e1bd25355d0?action=share&source=collection_link&creator=23539289"
+	},
+	"item": [
+		{
+			"name": "todo",
+			"item": [
+				{
+					"name": "todo create",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\":\"ddsadsa\",\r\n    \"description\":\"dasdsa\",\r\n    \"status\":\"Pending\",\r\n    \"due_date\":\"2024-07-12 14:41 +0300\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/todo/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"todo",
+								""
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "todo create",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer {{token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"title\":\"ddsadsa\",\r\n    \"description\":\"dasdsa\",\r\n    \"status\":\"Done\",\r\n    \"due_date\":\"2024-07-12 14:41 +0300\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8000/todo/",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8000",
+									"path": [
+										"todo",
+										""
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Fri, 12 Jul 2024 11:44:09 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "WSGIServer/0.2 CPython/3.11.4"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept, Cookie"
+								},
+								{
+									"key": "Allow",
+									"value": "GET, POST, HEAD, OPTIONS"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Length",
+									"value": "135"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Cross-Origin-Opener-Policy",
+									"value": "same-origin"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"_id\": \"6691170934a3791b93d04f55\",\n    \"due_date\": \"12 Jul, 2024 11:41 AM\",\n    \"title\": \"ddsadsa\",\n    \"description\": \"dasdsa\",\n    \"status\": \"Done\",\n    \"user\": 7\n}"
+						}
+					]
+				},
+				{
+					"name": "todo update",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\":\"title\",\r\n    \"description\":\"description\",\r\n    \"status\":\"Pending\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/todo/6691170934a3791b93d04f55/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"todo",
+								"6691170934a3791b93d04f55",
+								""
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "todo update",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer {{token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"title\":\"title\",\r\n    \"description\":\"description\",\r\n    \"status\":\"Pending\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8000/todo/669116e934a3791b93d04f54/",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8000",
+									"path": [
+										"todo",
+										"669116e934a3791b93d04f54",
+										""
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Fri, 12 Jul 2024 12:14:00 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "WSGIServer/0.2 CPython/3.11.4"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept, Cookie"
+								},
+								{
+									"key": "Allow",
+									"value": "GET, PUT, DELETE, HEAD, OPTIONS"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Length",
+									"value": "141"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Cross-Origin-Opener-Policy",
+									"value": "same-origin"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"_id\": \"669116e934a3791b93d04f54\",\n    \"due_date\": \"12 Jul, 2024 11:41 AM\",\n    \"title\": \"title\",\n    \"description\": \"description\",\n    \"status\": \"Pending\",\n    \"user\": 7\n}"
+						}
+					]
+				},
+				{
+					"name": "todo delete",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/todo/669116e934a3791b93d04f54/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"todo",
+								"669116e934a3791b93d04f54",
+								""
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "todo delete",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer {{token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8000/todo/669116e934a3791b93d04f54/",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8000",
+									"path": [
+										"todo",
+										"669116e934a3791b93d04f54",
+										""
+									]
+								}
+							},
+							"status": "No Content",
+							"code": 204,
+							"_postman_previewlanguage": "plain",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Fri, 12 Jul 2024 12:47:09 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "WSGIServer/0.2 CPython/3.11.4"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept, Cookie"
+								},
+								{
+									"key": "Allow",
+									"value": "GET, PUT, DELETE, HEAD, OPTIONS"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Length",
+									"value": "0"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Cross-Origin-Opener-Policy",
+									"value": "same-origin"
+								}
+							],
+							"cookie": [],
+							"body": null
+						}
+					]
+				},
+				{
+					"name": "todo list",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/todo/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"todo",
+								""
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "todo list",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer {{token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8000/todo/",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8000",
+									"path": [
+										"todo",
+										""
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Fri, 12 Jul 2024 11:49:23 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "WSGIServer/0.2 CPython/3.11.4"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept, Cookie"
+								},
+								{
+									"key": "Allow",
+									"value": "GET, POST, HEAD, OPTIONS"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Length",
+									"value": "297"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Cross-Origin-Opener-Policy",
+									"value": "same-origin"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"next\": null,\n    \"results\": [\n        {\n            \"_id\": \"669116e934a3791b93d04f54\",\n            \"due_date\": \"12 Jul, 2024 11:41 AM\",\n            \"title\": \"ddsadsa\",\n            \"description\": \"dasdsa\",\n            \"status\": \"Done\",\n            \"user\": 7\n        },\n        {\n            \"_id\": \"6691170934a3791b93d04f55\",\n            \"due_date\": \"12 Jul, 2024 11:41 AM\",\n            \"title\": \"ddsadsa\",\n            \"description\": \"dasdsa\",\n            \"status\": \"Done\",\n            \"user\": 7\n        }\n    ]\n}"
+						}
+					]
+				},
+				{
+					"name": "todo retrieve",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/todo/669116e934a3791b93d04f54/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"todo",
+								"669116e934a3791b93d04f54",
+								""
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "todo retrieve",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer {{token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8000/todo/669116e934a3791b93d04f54/",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8000",
+									"path": [
+										"todo",
+										"669116e934a3791b93d04f54",
+										""
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Fri, 12 Jul 2024 12:45:58 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "WSGIServer/0.2 CPython/3.11.4"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept, Cookie"
+								},
+								{
+									"key": "Allow",
+									"value": "GET, PUT, DELETE, HEAD, OPTIONS"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Length",
+									"value": "141"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Cross-Origin-Opener-Policy",
+									"value": "same-origin"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"_id\": \"669116e934a3791b93d04f54\",\n    \"due_date\": \"12 Jul, 2024 11:41 AM\",\n    \"title\": \"title\",\n    \"description\": \"description\",\n    \"status\": \"Pending\",\n    \"user\": 7\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "user",
+			"item": [
+				{
+					"name": "register",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\":\"ahmed@email2.com\",\r\n    \"password\":\"Ahmed123\",\r\n    \"name\":\"Ahmed\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/user/register/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"user",
+								"register",
+								""
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "register",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"email\":\"ahmed@email2.com\",\r\n    \"password\":\"Ahmed123\",\r\n    \"name\":\"Ahmed\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8000/user/register/",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8000",
+									"path": [
+										"user",
+										"register",
+										""
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Fri, 12 Jul 2024 11:09:00 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "WSGIServer/0.2 CPython/3.11.4"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept, Cookie"
+								},
+								{
+									"key": "Allow",
+									"value": "POST, OPTIONS"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Length",
+									"value": "43"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Cross-Origin-Opener-Policy",
+									"value": "same-origin"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"email\": \"ahmed@email2.com\",\n    \"name\": \"Ahmed\"\n}"
+						}
+					]
+				},
+				{
+					"name": "login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\":\"ahmed@email2.com\",\r\n    \"password\":\"Ahmed123\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/user/login/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"user",
+								"login",
+								""
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "login",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"email\":\"ahmed@email.com\",\r\n    \"password\":\"Ahmed123\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8000/user/login/",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8000",
+									"path": [
+										"user",
+										"login",
+										""
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Fri, 12 Jul 2024 13:06:29 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "WSGIServer/0.2 CPython/3.11.4"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept, Cookie"
+								},
+								{
+									"key": "Allow",
+									"value": "POST, OPTIONS"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Length",
+									"value": "2042"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Cross-Origin-Opener-Policy",
+									"value": "same-origin"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"access_token\": \"eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6IkEwd0hnc0FZYmwtZ1RzMmxzYllVNiJ9.eyJpc3MiOiJodHRwczovL2Rldi11dXMybXg3bG5vNnJyeXB3LnVzLmF1dGgwLmNvbS8iLCJzdWIiOiJhdXRoMHw2NjkxMGU0NTgwNzJjNjAzNzg4NDYyOGEiLCJhdWQiOlsiaHR0cDovL2xvY2FsaG9zdDo4MDAwIiwiaHR0cHM6Ly9kZXYtdXVzMm14N2xubzZycnlwdy51cy5hdXRoMC5jb20vdXNlcmluZm8iXSwiaWF0IjoxNzIwNzg5NTkwLCJleHAiOjE3MjA4NzU5OTAsInNjb3BlIjoib3BlbmlkIHByb2ZpbGUgZW1haWwgYWRkcmVzcyBwaG9uZSBvZmZsaW5lX2FjY2VzcyIsImd0eSI6InBhc3N3b3JkIiwiYXpwIjoicHRwZktSeE0xMGFrNGZ5QUxlSUx3ZGFqQVVZdmo3QnYifQ.tKhoS5qyrcaba4IOuS_6phUCN4YwtW7TSMeLfJOwTa4SqMwdRsPRUetSFSS9fBxD41lF1fX205t-bwPzbRlyjTILhkXYTACCHXGvoiFZI-ctw7ar6PCfCDVenM4JxusaZ9qnEVdZjQF3bBSCB_QGBWdkGkVmjFxq5wyz3QhH69_vXvxchnFj1-jbaAgkoA9w03Q5v0H-solhZ2r5mqa6LqisDL6WLhPIbjXUTFIdfj0FdhHTMzx6m0Qq0S3TOMoyKVTli4TxAflJpxq8I9GrZJ0lac81vF8-iJUM5CMwsJamZTwK-WlWvfQe3PZXeUoi7XfUIZn2Ssrxdqr0d5ON-g\",\n    \"refresh_token\": \"hGwhuFNpdD7Gy2hjOPAhhnze4sucGqIMT2Iwj7qQu9LsD\",\n    \"id_token\": \"eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6IkEwd0hnc0FZYmwtZ1RzMmxzYllVNiJ9.eyJuaWNrbmFtZSI6ImFobWVkIiwibmFtZSI6IkFobWVkIiwicGljdHVyZSI6Imh0dHBzOi8vcy5ncmF2YXRhci5jb20vYXZhdGFyLzQ4MDQ1MTkyNzlhMDJiZmVlNjk0OTIyNGFjM2M2YzQ5P3M9NDgwJnI9cGcmZD1odHRwcyUzQSUyRiUyRmNkbi5hdXRoMC5jb20lMkZhdmF0YXJzJTJGYWgucG5nIiwidXBkYXRlZF9hdCI6IjIwMjQtMDctMTJUMTM6MDY6MzAuNDcwWiIsImVtYWlsIjoiYWhtZWRAZW1haWwuY29tIiwiZW1haWxfdmVyaWZpZWQiOmZhbHNlLCJpc3MiOiJodHRwczovL2Rldi11dXMybXg3bG5vNnJyeXB3LnVzLmF1dGgwLmNvbS8iLCJhdWQiOiJwdHBmS1J4TTEwYWs0ZnlBTGVJTHdkYWpBVVl2ajdCdiIsImlhdCI6MTcyMDc4OTU5MCwiZXhwIjoxNzIwODI1NTkwLCJzdWIiOiJhdXRoMHw2NjkxMGU0NTgwNzJjNjAzNzg4NDYyOGEifQ.bMR4BTuTuq677q2AnMvG13oVQxXms9tL7KmfuLoO2nk7rEUiGHOsfIvAMgg3spVZxSZu4CkD0jhCMhpxEMVBS9bfn07UF2wtGrIXpLjph8flwfV0pMSgPtK4wvP08ioWxCuW4rU0OP5D42Xakn0Q2XsyFOH-bPvdU23HZMPcIxvLbVxdTGqNU20OG7SpSkHCwPmFf-TTUQwqKWbm2C4ApodrzyYqhRMzdt1n50s0fdnGVtaA_Zhqh54Q8_PLlzn9xq1sQ1o1uN5Oyza6TkThcfYjnDsvViisdgsOp-ZSKpmeU25IZvP3v81xNFuJ0F1iqfZgGiAkgzdR2C4UYjyNlw\",\n    \"scope\": \"openid profile email address phone offline_access\",\n    \"expires_in\": 86400,\n    \"token_type\": \"Bearer\"\n}"
+						}
+					]
+				},
+				{
+					"name": "refresh token",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n   \"refresh_token\": \"hGwhuFNpdD7Gy2hjOPAhhnze4sucGqIMT2Iwj7qQu9LsD\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/user/refresh/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"user",
+								"refresh",
+								""
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "refresh token",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n   \"refresh_token\": \"hGwhuFNpdD7Gy2hjOPAhhnze4sucGqIMT2Iwj7qQu9LsD\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8000/user/refresh/",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8000",
+									"path": [
+										"user",
+										"refresh",
+										""
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Fri, 12 Jul 2024 13:18:42 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "WSGIServer/0.2 CPython/3.11.4"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept, Cookie"
+								},
+								{
+									"key": "Allow",
+									"value": "POST, OPTIONS"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Length",
+									"value": "1592"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Cross-Origin-Opener-Policy",
+									"value": "same-origin"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"access_token\": \"eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6IkEwd0hnc0FZYmwtZ1RzMmxzYllVNiJ9.eyJpc3MiOiJodHRwczovL2Rldi11dXMybXg3bG5vNnJyeXB3LnVzLmF1dGgwLmNvbS8iLCJzdWIiOiJhdXRoMHw2NjkxMGU0NTgwNzJjNjAzNzg4NDYyOGEiLCJhdWQiOlsiaHR0cDovL2xvY2FsaG9zdDo4MDAwIiwiaHR0cHM6Ly9kZXYtdXVzMm14N2xubzZycnlwdy51cy5hdXRoMC5jb20vdXNlcmluZm8iXSwiaWF0IjoxNzIwNzkwMzIyLCJleHAiOjE3MjA4NzY3MjIsInNjb3BlIjoib3BlbmlkIG9mZmxpbmVfYWNjZXNzIiwiZ3R5IjpbInJlZnJlc2hfdG9rZW4iLCJwYXNzd29yZCJdLCJhenAiOiJwdHBmS1J4TTEwYWs0ZnlBTGVJTHdkYWpBVVl2ajdCdiJ9.GnnukNNZDwRRPTARuv_4lwITp-Nfs0vjEeKU03wSNZovfbh_125sH_IQ88XPWEQR1XMVaqnKWJI-TfiVdZlE31xTWQ3gYLX_8abeRhBFnLt_quAH1wvrTUuvm2vQ6CwjEsoYCQ659WsSk3GgRgDEL7NdIZwb_vYWrYAHhdJFVGc1ZRjP92ML6pxfGOyFPHTJGbnJPUZm5VoEqNn6--UHkBleP1iswYp45dfIKUpluprS61o8Xw41ACD0ZEDxCrbWO7mXE2KEamkDQu7r2cLT9xH7eTZwOdp3xcsrezd4u7Mxbz7vNP_Fl6inMO5O9_azLw5u4sn0Bnr0YNjXgBmqHg\",\n    \"id_token\": \"eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6IkEwd0hnc0FZYmwtZ1RzMmxzYllVNiJ9.eyJpc3MiOiJodHRwczovL2Rldi11dXMybXg3bG5vNnJyeXB3LnVzLmF1dGgwLmNvbS8iLCJhdWQiOiJwdHBmS1J4TTEwYWs0ZnlBTGVJTHdkYWpBVVl2ajdCdiIsImlhdCI6MTcyMDc5MDMyMiwiZXhwIjoxNzIwODI2MzIyLCJzdWIiOiJhdXRoMHw2NjkxMGU0NTgwNzJjNjAzNzg4NDYyOGEifQ.hnAMtwk1Ijwv0fcRu54XyRKZLDHiI6z5HFZYnDEZVx5NOthiTEsAtF7yqdrMODzbosS5bPtpSfGiZzsv8KfTWSgXr4cEymzUGsoseLEnJWlqXXhNPpIDKSY4kLCIt2TYeQOFse3R5qpcLZVp8iNtxL0Z5f1RCdIjRMK6xEROPTqCuzMiaMnJuZBPbu1wfUZZTf2BnkOFwWETa3qxXW9wYcwyOd7_VHO9F6Q4pXNKIflSridhyvduM7VJKRnrZoglifP6ioNEAZE__rASYHgljV57ecK3gI_XnaXucFBjM0Nqg_XTtBQnBq6T_VdRBgHHNXvJ2VlG1MgZrVwc33SUFQ\",\n    \"scope\": \"openid offline_access\",\n    \"expires_in\": 86400,\n    \"token_type\": \"Bearer\"\n}"
+						}
+					]
+				}
+			]
+		}
+	]
+}

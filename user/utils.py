@@ -26,7 +26,19 @@ def obtainTokenAuth0(email,password):
         'username': email,
         'password': password,
         "audience":settings.API_IDENTIFIER,
-        "scope":"openid"
+        "scope":"openid offline_access"
+    }
+    response = requests.post(url, json=payload)
+    return response
+
+def refreshTokenAuth0(refresh_token):
+    url = f'https://{settings.AUTH0_DOMAIN}/oauth/token'
+    payload = {
+        'grant_type': 'refresh_token',
+        'client_id': settings.AUTH0_CLIENT_ID,
+        'client_secret': settings.AUTH0_CLIENT_SECRET,
+        'refresh_token': refresh_token,
+        'scope': 'openid offline_access'
     }
     response = requests.post(url, json=payload)
     return response

@@ -10,3 +10,6 @@ class Todo(models.Model):
     status = models.CharField(choices=(("Done","Done"),("Pending","Pending"),("Canceled","Canceled"),("Active","Active")),max_length=15)
     due_date = models.DateTimeField()
     user = models.ForeignKey(User,on_delete=models.CASCADE)
+
+    class Meta:
+        db_table = 'todo_todo'

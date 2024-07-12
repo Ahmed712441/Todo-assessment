@@ -3,6 +3,7 @@ from django.db import models
 from django.contrib.auth.models import (
     BaseUserManager, AbstractBaseUser,PermissionsMixin
 )
+from .utils import createAuth0User
 
 class CustomUserManager(BaseUserManager):
 
@@ -15,8 +16,12 @@ class CustomUserManager(BaseUserManager):
         if not email:
             raise ValueError('Users must have an email address')
 
+        response = createAuth0User(email,password,name)
+        data = response.json()
+        id = data['_id']
+        username = 'auth0.' + id
         user = self.model(
-            # username=
+            username=username,
             email=self.normalize_email(email),
             name=name,**otherfields
         )
@@ -25,7 +30,7 @@ class CustomUserManager(BaseUserManager):
         user.save(using=self._db)
         return user
 
-    def create_superuser(self, email, name, password=None,**otherfields):
+    def create_superuser(self, username, name, password=None,**otherfields):
         """
         Creates and saves a superuser with the given email and password.
         """
@@ -34,7 +39,7 @@ class CustomUserManager(BaseUserManager):
         otherfields.setdefault('is_active',True)
 
         return self.create_user(
-            email,
+            email=username,
             password=password,
             name=name,
             **otherfields
@@ -43,8 +48,10 @@ class CustomUserManager(BaseUserManager):
 
 class User(AbstractBaseUser,PermissionsMixin):
 
+    last_login = None
+
     username = models.CharField(max_length=200,unique=True)
-    email = models.EmailField(blank=True,null=True,unique=True)
+    email = models.EmailField(unique=True)
     name = models.CharField(max_length=100,null=True,blank=True)
     created_on = models.DateField(auto_now_add=True)
     is_staff = models.BooleanField(default=False)

@@ -1,15 +1,34 @@
 from django.contrib.auth import authenticate
 import requests
+from django.contrib.auth import get_user_model
+from django.conf import settings
 
-def jwt_get_username_from_payload_handler(payload):
-    username = payload.get('sub').replace('|', '.')
+User = get_user_model()
+
+def get_username(username):
+    username = username.replace('|', '.')
+    return username
+
+def jwt_get_username_from_payload_handler(payload,token,*args,**kwargs):
+    username = get_username(payload.get('sub'))
+    try:
+        # if user is created using our api
+        User.objects.get(username=username)
+    except:
+        # if user is created on auth0 but don't exists on our api
+        url = settings.JWT_ISSUER + 'userinfo'
+        response = requests.get(url,headers={"Authorization":"Bearer "+token})
+        data = response.json()
+        username = get_username(data['sub'])
+        email = data['email']
+        name = data['name']
+        user = User(username=username,email=email,name=name)
+        user.save()
     authenticate(remote_user=username)
     return username
 
 import json
-
 import jwt
-from django.conf import settings
 
 def jwt_decode_token(token):
     header = jwt.get_unverified_header(token)
