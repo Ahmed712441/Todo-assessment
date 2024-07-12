@@ -7,4 +7,4 @@ class TodoPermesion(BasePermission):
         return request.user.is_authenticated
     
     def has_object_permission(self, request, view, obj):
-        return obj.user == request.user
+        return obj.user_id == request.user.id

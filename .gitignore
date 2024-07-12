@@ -53,10 +53,11 @@ coverage.xml
 # Sphinx documentation
 docs/_build/
 __pycache__/
-.env
+*.env
 
 *.zip
 
 media/
 baceknd/staticfiles
 staticfiles/
+static/

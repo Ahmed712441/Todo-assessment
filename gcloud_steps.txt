@@ -1,0 +1,14 @@
+commands:
+gcloud secrets create django_settings --data-file .env
+
+gcloud iam service-accounts create serviceAccount --display-name "serviceAccount"
+
+gcloud secrets add-iam-policy-binding django_settings --member serviceAccount:serviceAccount@assesment-todo-429214.iam.gserviceaccount.com --role roles/secretmanager.secretAccessor
+
+gcloud secrets add-iam-policy-binding django_settings --member serviceAccount:assesment-todo-429214@appspot.gserviceaccount.com --role roles/secretmanager.secretAccessor
+
+gcloud app deploy
+
+gcloud app versions list
+
+gcloud app versions delete VERSION_ID
