@@ -62,11 +62,11 @@
 | due_date      | DateTime |
 | user      | RelatedField to User Table |
 | _id      | Auto-generated id |
-### Todo Endpoint
+### Todo endpoints
 | Endpoint  | Description |
 | ------------- |:-------------:|
 | POST /todo/   | create new todo ( need authenticated user ), inputs: title,description,due_date,status      |
-| GET /todo/      | list the todos of requesting user has pagination ( need authenticated user ) , no inputs needed    |
-| PUT /todo/$TODO_ID/      | update todo, include fields you want to update other fields are not necessary inputs: title,description,due_date,status ( need todo owner )   |
+| GET /todo/      | list the todos of requesting user has pagination ( need authenticated user ), no inputs needed    |
+| PUT /todo/$TODO_ID/      | update todo, include fields you want to update other fields are not necessary, inputs: title,description,due_date,status ( need todo owner )   |
 | DELETE /todo/$TODO_ID/      | delete todo, no inputs needed ( need todo owner ) |
 | GET /todo/$TODO_ID/      | retrieve individual todo, no inputs needed ( need todo owner ) |

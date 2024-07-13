@@ -24,7 +24,6 @@ def jwt_get_username_from_payload_handler(payload,token,*args,**kwargs):
         name = data['name']
         user = User(username=username,email=email,name=name)
         user.save()
-    authenticate(remote_user=username)
     return username
 
 import json
